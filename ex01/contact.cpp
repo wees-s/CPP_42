@@ -10,12 +10,16 @@ void    Contact::addContact(void)
 
     std::cout << "FIRST NAME: ";
     std::getline(std::cin, name);
+
     std::cout << "LAST NAME: ";
     std::getline(std::cin, lastname);
+    
     std::cout << "NICKNAME: ";
     std::getline(std::cin, nickname);
+    
     std::cout << "PHONE NUMBER: ";
     std::getline(std::cin, number);
+    
     std::cout << "SECRET: ";
     std::getline(std::cin, secret);
 

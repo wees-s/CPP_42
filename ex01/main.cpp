@@ -8,7 +8,7 @@ int main(void){
     while(input != "EXIT"){
         std::cout << "=========PhoneBook==========" << std::endl;
         std::cout << "OPTIONS: ADD | SEARCH | EXIT" << std::endl;
-        std::cin >> input;
+        std::getline(std::cin, input);
         if (input == "ADD")
         {
             system("clear");
