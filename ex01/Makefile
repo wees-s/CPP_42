@@ -1,9 +1,10 @@
-NAME		= megaphone
+NAME		= agenda
 
 CPP			= c++
-CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
+CPPFLAGS	= -std=c++98
 
-SRCS		= phonebook.cpp
+SRCS		= main.cpp contact.cpp
+
 OBJS		= $(SRCS:.cpp=.o)
 
 all: $(NAME)

@@ -1,20 +1,10 @@
-#ifndef PHONE_BOOK_HPP
-#define PHONE_BOOK_HPP
+#include "phone.hpp"
 
-#include <iostream>
-
-class Phonebook{
+class PhoneBook{
     private:
-        /* data */
+        Contact contacts;
+        int count;
+        int next;
     public:
+        PhoneBook() : count(0), next(0) {}
 };
-
-class Contact{
-    private:
-        std::string name_;
-        std::string lastname_;
-        std::string nickname_;
-        std::string number_;
-        std::string secret_;
-};
-
