@@ -16,9 +16,12 @@ int main(void){
     PhoneBook pb;
     std::string input;
 
+    system("clear");
     while(input != "EXIT"){
         printPhonebook();
         std::getline(std::cin, input);
+        if (input.empty())
+            exit(EXIT_FAILURE);
         if (input == "ADD")
         {
             system("clear");
@@ -26,6 +29,12 @@ int main(void){
         }
         else if (input == "SEARCH")
         {
+            if (pb.getCount() == 0)
+            {
+                system("clear");
+                std::cout << "ERROR: NO CONTACTS TO SEARCH" << std::endl;
+                continue ;
+            }
             printOptions();
             pb.allContacts();
         }

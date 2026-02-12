@@ -56,3 +56,17 @@ void    Contact::printContacts(int index)
     }
     std::cout << std::setw(10) << nickname << std::endl;
 }
+
+void    Contact::fullContact(void)
+{
+    std::cout << "NAME: ";
+    std::cout << name_ << std::endl;
+    std::cout << "LAST NAME: ";
+    std::cout << lastname_ << std::endl;
+    std::cout << "NICKNAME: ";
+    std::cout << nickname_ << std::endl;
+    std::cout << "PHONE: ";
+    std::cout << number_ << std::endl;
+    std::cout << "DARKEST SECRET: ";
+    std::cout << secret_ << std::endl;
+}

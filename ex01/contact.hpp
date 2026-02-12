@@ -18,4 +18,5 @@ class Contact{
             std::string secret
         );
         void    printContacts(int index);
+        void    fullContact(void);
 };

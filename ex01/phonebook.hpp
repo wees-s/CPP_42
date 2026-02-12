@@ -9,4 +9,5 @@ class PhoneBook{
         PhoneBook() : count(0), next(0) {}
         void	addContact(void);
         void    allContacts(void);
+        int     getCount(void);
 };
