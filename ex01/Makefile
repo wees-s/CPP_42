@@ -3,7 +3,7 @@ NAME		= agenda
 CPP			= c++
 CPPFLAGS	= -std=c++98
 
-SRCS		= main.cpp contact.cpp
+SRCS		= main.cpp contact.cpp phonebook.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 

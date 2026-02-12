@@ -1,31 +1,5 @@
 #include "phone.hpp"
 
-void    Contact::addContact(void)
-{
-    std::string name;
-    std::string lastname;
-    std::string nickname;
-    std::string number;
-    std::string secret;
-
-    std::cout << "FIRST NAME: ";
-    std::getline(std::cin, name);
-
-    std::cout << "LAST NAME: ";
-    std::getline(std::cin, lastname);
-    
-    std::cout << "NICKNAME: ";
-    std::getline(std::cin, nickname);
-    
-    std::cout << "PHONE NUMBER: ";
-    std::getline(std::cin, number);
-    
-    std::cout << "SECRET: ";
-    std::getline(std::cin, secret);
-
-    setContact(name, lastname, nickname, number, secret);
-}
-
 void    Contact::setContact(
     std::string name,
     std::string lastname,
@@ -34,42 +8,51 @@ void    Contact::setContact(
     std::string secret)
 {
     name_ = name;
-    if (name_.length() > 10)
-    {
-        name_.resize(10);
-        name_[9] = '.';
-    }
-    lastname_ = lastname;
-    if (lastname_.length() > 10)
-    {
-        lastname_.resize(10);
-        lastname_[9] = '.';
-    }    
-    nickname_ = nickname;
-    if (nickname_.length() > 10)
-    {
-        nickname_.resize(10);
-        nickname_[9] = '.';
-    }    
-    number_ = number;
-    if (number_.length() > 10)
-    {
-        number_.resize(10);
-        number_[9] = '.';
-    }    
+    lastname_ = lastname;  
+    nickname_ = nickname; 
+    number_ = number;  
     secret_ = secret;
-    if (secret_.length() > 10)
-    {
-        secret_.resize(10);
-        secret_[9] = '.';
-    }
 }
 
-void    Contact::printContact(void)
+void printOptions(void)
 {
-    std::cout << name_ << std::endl;
-    std::cout << lastname_ << std::endl;
-    std::cout << nickname_ << std::endl;
-    std::cout << number_ << std::endl;
-    std::cout << secret_ << std::endl;
+	std::cout << std::setw(10) << "INDEX";
+	std::cout << "|";
+	std::cout << std::setw(10) << "FIRST NAME";
+	std::cout << "|";
+	std::cout << std::setw(10) << "LAST NAME";
+	std::cout << "|";
+	std::cout << std::setw(10) << "NICKNAME"  << std::endl;
+}
+
+void    Contact::printContacts(int index)
+{
+    std::string name = name_;
+    std::string lastname = lastname_;
+    std::string nickname = nickname_;
+    std::string number = number_;
+    std::string secret = secret_;
+
+    std::cout << std::setw(10) << index;
+    std::cout << "|";
+    if (name.length() > 10)
+    {
+        name.resize(10);
+        name[9] = '.';
+    }
+    std::cout << std::setw(10) << name;
+    std::cout << "|";
+    if (lastname.length() > 10)
+    {
+        lastname.resize(10);
+        lastname[9] = '.';
+    }
+    std::cout << std::setw(10) << lastname;
+    std::cout << "|";
+    if (nickname.length() > 10)
+    {
+        nickname.resize(10);
+        nickname[9] = '.';
+    }
+    std::cout << std::setw(10) << nickname << std::endl;
 }
