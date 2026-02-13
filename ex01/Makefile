@@ -1,9 +1,9 @@
-NAME		= agenda
+NAME		= phonebook
 
 CPP			= c++
-CPPFLAGS	= -std=c++98
+CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS		= main.cpp contact.cpp phonebook.cpp
+SRCS		= main.cpp contact.cpp phonebook.cpp phonebook_utils.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 

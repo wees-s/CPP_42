@@ -4,32 +4,12 @@ void    PhoneBook::addContact(void)
 {
     if (next == 8)
         next = 0;
-    std::string name;
-    std::string lastname;
-    std::string nickname;
-    std::string number;
-    std::string secret;
+    std::string name = addName();
+    std::string lastname = addLastname();
+    std::string nickname = addNickame();
+    std::string number = addPhonenumber();
+    std::string secret = addSecret();
 
-    std::cout << "FIRST NAME: ";
-    std::getline(std::cin, name);
-    if (name.empty())
-        exit(EXIT_FAILURE);
-    std::cout << "LAST NAME: ";
-    std::getline(std::cin, lastname);
-    if (lastname.empty())
-        exit(EXIT_FAILURE);    
-    std::cout << "NICKNAME: ";
-    std::getline(std::cin, nickname);
-    if (nickname.empty())
-        exit(EXIT_FAILURE);
-    std::cout << "PHONE NUMBER: ";
-    std::getline(std::cin, number);
-    if (number.empty())
-        exit(EXIT_FAILURE);
-    std::cout << "SECRET: ";
-    std::getline(std::cin, secret);
-    if (secret.empty())
-        exit(EXIT_FAILURE);
     system("clear");
     std::cout << "MESSAGE:";
     std::cout << std::setw(35) << "CONTACT ADDED SUCCESSFULLY" << std::endl;
@@ -48,21 +28,32 @@ void PhoneBook::allContacts(void)
         contacts[i].printContacts(i + 1);
     while (1)
     {
-        std::getline(std::cin, input);
-        if (input.empty())
-            exit(EXIT_FAILURE);
-        if (input.length() > 1)
-        {
+        std::cout << "CHOISE A CONTACT INDEX:";
+        if (!(std::getline(std::cin, input))){
+            std::cout << "(EOF detected)." << std::endl;
+            std::exit(1);
+        }
+        if (input.empty()){
+            std::cout << "ERROR: WRONG INDEX" << std::endl;
+            break ;
+        }
+        if (input.length() > 1){
             std::cout << "ERROR: WRONG INDEX" << std::endl;
             continue ;
         }
-        else if ((nb = input[0] - '0') - 1 < count)
-        {
-            contacts[nb].fullContact();
+        else if ((nb = input[0] - '0') - 1 < count){
+            if (nb == 0)
+            {
+                std::cout << "ERROR: WRONG INDEX" << std::endl;
+                break ;
+            } 
+            contacts[nb - 1].fullContact();
             break ;
         }
-        else
+        else{
             std::cout << "ERROR: WRONG INDEX" << std::endl;
+            break ;
+        }
     }
 }
 

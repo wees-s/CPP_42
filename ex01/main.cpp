@@ -19,9 +19,11 @@ int main(void){
     system("clear");
     while(input != "EXIT"){
         printPhonebook();
-        std::getline(std::cin, input);
-        if (input.empty())
-            exit(EXIT_FAILURE);
+        if (!(std::getline(std::cin, input)))
+        {
+            std::cout << "(EOF detected)." << std::endl;
+            break ;
+        }
         if (input == "ADD")
         {
             system("clear");
@@ -41,4 +43,5 @@ int main(void){
         else
             system("clear");
     }
+    return (0);
 }

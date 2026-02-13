@@ -7,7 +7,12 @@ class PhoneBook{
         int next;
     public:
         PhoneBook() : count(0), next(0) {}
-        void	addContact(void);
-        void    allContacts(void);
-        int     getCount(void);
+        void	    addContact(void);
+        void        allContacts(void);
+        int         getCount(void);
+        std::string addName(void);
+        std::string addLastname(void);
+        std::string addNickame(void);
+        std::string addPhonenumber(void);
+        std::string addSecret(void);
 };
