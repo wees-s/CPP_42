@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    Zombie *zombie;
+    Zombie* zombie;
 
     zombie = newZombie("Heap");
     zombie->announce();

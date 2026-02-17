@@ -1,5 +1,10 @@
 #include "phone.hpp"
 
+PhoneBook::PhoneBook(){
+    count = 0;
+    next = 0;
+};
+
 void    PhoneBook::addContact(void)
 {
     if (next == 8)

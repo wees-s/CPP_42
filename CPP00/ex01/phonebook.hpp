@@ -6,7 +6,7 @@ class PhoneBook{
         int count;
         int next;
     public:
-        PhoneBook() : count(0), next(0) {}
+        PhoneBook( void );
         void	    addContact(void);
         void        allContacts(void);
         int         getCount(void);
