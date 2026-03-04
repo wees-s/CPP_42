@@ -1,36 +1,36 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/02 13:58:48 by bedantas          #+#    #+#             */
-/*   Updated: 2026/03/02 14:02:16 by bedantas         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
+	std::cout << "=================" << std::endl;
+	std::cout << "Constructors:\n" << std::endl;
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	
-	std::cout << meta->getType() << " ";
+	const WrongAnimal* wrong = new WrongAnimal();
+	const WrongAnimal* wrongcat = new WrongCat();
+
+	std::cout << "\n=================" << std::endl;
+	std::cout << "Sounds:\n" << std::endl;
+	std::cout << meta->getType() << ": ";
 	meta->makeSound();
-
-	std::cout << i->getType() << " ";
+	std::cout << i->getType() << ": ";
 	i->makeSound();
-	std::cout << j->getType() << " ";
+	std::cout << j->getType() << ": ";
 	j->makeSound();
+	std::cout << wrongcat->getType() << ": ";
+	wrongcat->makeSound();
 
-	delete i;
-	delete j;
+	std::cout << "\n=================" << std::endl;
+	std::cout << "Destructors:\n" << std::endl;
 	delete meta;
-	
+	delete j;
+	delete i;
+	delete wrong;
+	delete wrongcat;
 	return (0);
 }
