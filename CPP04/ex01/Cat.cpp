@@ -23,7 +23,11 @@ Cat& Cat::operator=(const Cat& copy)
 {
 	std::cout << "Cat: copy operator" << std::endl;
 	if (this != &copy)
+	{
+		delete this->brain;
+		this->brain = new Brain(*copy.brain);
 		this->type = copy.type;
+	}
 	return (*this);
 }
 
