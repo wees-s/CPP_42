@@ -16,7 +16,8 @@ Cat::Cat() : Animal()
 Cat::Cat(const Cat& copy) : Animal(copy)
 {
 	std::cout << "Cat: copy constructor" << std::endl;
-	*this = copy;
+	brain = new Brain(*copy.brain);
+	type = copy.type;
 }
 
 Cat& Cat::operator=(const Cat& copy)
